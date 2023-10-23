@@ -1,0 +1,91 @@
+
+//* Large screen
+@media only screen and (max-width:1920px) {
+    .Error-Page{
+        width:100vw;
+        height:100vh;
+        // @include centerDisplay;
+        display:flex;
+        align-items:Center;
+        justify-content:Center;
+        .error-content{
+            width:70%;
+            height:70%;
+            @include centerDisplay;
+            .not-found{
+                width:60%;
+                height:80%;
+                // border:2px solid red;
+                display:flex;
+                flex-direction: column;
+                justify-content:Center;
+                align-items:Center;
+                font-family: 'Montserrat', sans-serif;
+                text-align: center;
+                gap:10px;
+                &_code{
+                    width:80%;
+                     background-image:url("https://scontent.xx.fbcdn.net/v/t1.15752-9/351604987_635478554826489_7274974103119894358_n.jpg?stp=dst-jpg_p206x206&_nc_cat=111&ccb=1-7&_nc_sid=aee45a&_nc_ohc=2UEvklpvGq4AX_eBTmx&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdQtk2Ly0QZP1eKkZUHseTAO7aeZiibj_PMx6ld22pOYAA&oe=653D3F91");
+                    background-size: contain;
+                    background-repeat:no-repeat;
+                    background-position:center center;
+                    font-family: 'Open Sans', sans-serif;
+                    font-size:12rem;
+                    color:#012463;
+                    text-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;            }
+    
+                &_notice{
+                    font-size:25px;
+                    color:#012463;
+                }
+    
+                &_text{
+                    text-align: center;
+                }
+                .return{
+                    text-align: center;
+                    width:150px;
+                    text-decoration:none;
+                    margin-top:30px;
+                    padding:10px;
+                    background-color:#012463;
+                    color:#FFFFFF;
+                    font-family: 'Montserrat', sans-serif;
+                    border-radius:4px;
+                }
+            }
+    
+        }
+    }
+}
+
+//* Tablet Device
+@media only screen and (max-width:768px) {
+    .Error-Page{
+        .error-content{
+            .not-found{
+                &_code{
+                    font-size:8rem;
+                }
+                
+            }
+        }
+    }
+}
+
+//* Phone Device
+@media only screen and (max-width:425px) {
+    .Error-Page{
+        .error-content{
+            .not-found{
+                &_code{
+                    font-size:5rem;
+                }
+                &_text{
+                    display:none;
+                }
+            }
+        }
+    }
+}
+

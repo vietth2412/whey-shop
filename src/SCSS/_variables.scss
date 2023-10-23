@@ -1,0 +1,28 @@
+@mixin centerDisplay{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+//* Extra device ( max-width: 2560px)
+// $large-screen:2560px;
+
+//* Breakpoints:
+//* 768
+//* 1024
+//* 1280
+//* 1366
+//* 1440
+//* 1600
+//* 1920
+
+
+
+
+//* LARGE DEVICE ( max-width:2560px, min-width: 1440px)
+$large-max-screen:2560px;
+$large-min-screen:1440px;
+
+//* MEDIUM DEVICE ( max-width:1439px; min-width: 1024px)
+$medium-max-screen:1439px;
+$medium-min-screen:1024px;

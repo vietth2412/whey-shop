@@ -1,0 +1,198 @@
+
+@media only screen and (max-width:2560px) {
+    .cart{
+        width:100vw;
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        text-align: center;
+        // margin: 0 auto;
+        // background-color:orange;
+        .cart-item{
+            // bordeR:1px solid red;
+            width:80%;
+            height:500px;
+            @include centerDisplay;
+            // display:flex;
+            &_product{
+                // border:2px solid black;
+                width:65%;
+                height:100%;
+                // overflow-y:scroll;
+                .cart--form{
+                    .cart-table{
+                        position:relative;
+                        width:100%;
+                    }
+                    table{
+                        border-collapse:collapse;
+                        max-width:100%;
+                        // overflow:hidden;
+                        // overflow-wrap:break-word;
+                        thead{
+                            vertical-align: middle;
+                            border-bottom:1px solid #ebebeb;
+                            tr{
+                                overflow:hidden;
+                                position:relative;
+                                th{
+                                    overflow-wrap:break-word;
+                                    max-width:100%;
+                                    padding:12px 12px;
+                                    font-weight:600;
+                                    font-size:16px;
+                                    // background-color:red;
+                                    text-align:left;
+                                }
+                                .product-thumbnail{
+                                    width:50px;
+                                }
+                            }
+                        }
+                        tbody{
+                            overflow:scroll;
+                            tr{
+                                border-bottom:1px solid #e1e1e1;
+                                height:80px;
+                                position:relative;
+                                td{
+                                    // background-color:orange;
+                                    text-align:left;
+                                    padding:12px 12px;
+                                    // border:1px solid black;
+                                    width:10px;
+    
+                                    // quantity
+                                    .qty{
+                                        width:114px;
+                                        display:flex;
+                                        justify-content:center;
+                                        border:1px solid hsl(0, 0%, 88%);
+                                        input{
+                                            width:50px;
+                                            text-align:center;
+                                            outline:none;
+                                            bordeR:none;
+    
+                                        }
+                                        .plus{
+                                            border-right:1px solid #e1e1e1;
+    
+                                        }
+                                        .minus{
+                                            border-left:1px solid #e1e1e1;
+                                        }
+                                        &_button{
+                                            user-select:none;
+                                            // background-color:red;
+                                            display:flex;
+                                            justify-content:center;
+                                            align-items:center;
+                                            height:40px;
+                                            text-align:center;
+                                            width:30px;
+                                        }
+                                        &_input{
+                                            // background-color:blue;
+                                            width:100%;
+                                            // outline:none;
+                                            border:none;
+                                            // border:1px solid #e1e1e1;
+                                            // padding: 0 30px;
+                                            text-align:center;
+                                            font-size:14px;
+                                            color:#282828;
+                                        }
+                                        
+                                    }
+    
+                                    // remove
+                                    .remove{
+                                        color:blue;
+                                        font-size:14px;
+                                        font-weight:600;
+                                    }
+                                }
+                                td:nth-child(2) {
+                                    color:#6a5af9;
+                                    text-transform:italic;
+                                    font-weight:600;
+                                }
+                                td:nth-child(3) {
+                                    color:#777777;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+    
+    
+            &_payment{
+                border:1px solid #e1e1e1;
+                width:35%;
+                height:100%;
+                display:flex;
+                justify-content:center;
+                .wrapper{
+                    width:90%;
+                    height:auto;
+                    // background-color:red;
+                    // border:2px solid blue;
+                    h2{
+                        text-align:left;
+                        font-size:30px;
+                        padding:15px 0;
+                        font-family: 'Oswald', sans-serif;
+                    }
+    
+                    .payment--form{
+                        padding:40px 0;
+                        // background-color:blue;
+                        .payment-table{
+                            // border:2px solid red;
+                            width:100%;
+                            position: relative;
+    
+                            tbody{
+                               tr{
+                                padding:15px 0;
+                                border-bottom:1px solid #e1e1e1;
+                                display:flex;
+                                justify-content: space-between;
+                               }
+                            }
+                        }
+                    }
+    
+                    button{
+                        padding:10px 20px;
+                        border-radius:20px;
+                        border:none;
+                        color:#FFFFFF;
+                        background-color:#6a5af9;
+                        width:80%;
+                        font-size:16px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:1024px) {
+    .cart{
+        .cart-item{
+            display:flex;
+            flex-direction: column;
+            &_payment{
+                margin-top:20px;
+                width:50%;
+            }
+            &_product{
+                border:1px solid blue;
+            }
+        }
+    }
+}

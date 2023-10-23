@@ -1,0 +1,358 @@
+@keyframes shadow-pulse {
+    0% {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      50% {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      }
+      100% {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+  }
+
+@media screen and (max-width:1920px) {
+    .logIn-page, 
+    .signUp-page{   
+    height:100vh;
+    width:100vw;
+    @include centerDisplay;
+
+    .logIn--form,
+    .signUp--form{
+        animation: shadow-pulse 2s infinite;
+        background-color:#F5F5F5;
+        border-radius:5px;
+        position:relative;
+        width:60%;
+        height:85%;
+        border:3px solid #0D0D0D;
+        @include centerDisplay;
+        
+        // input section
+        .logIn--box{
+            background-color:#FFFFFF;
+            width:100%;
+            height:100%;
+            @include centerDisplay;
+
+            .box{
+                width:80%;
+                height:90%;
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+                gap:30px;
+                align-items:center;
+
+                &_title{
+                    // border:1px solid blue;
+                    width:300px;
+                    height:25%;
+                    @include centerDisplay;
+                    flex-direction: column;
+                    h1{ 
+                        font-size:40px;
+                        color:#2E8A99;
+                        color:#0D0D0D;
+                        font-family: 'Montserrat', sans-serif;
+    
+                    }
+                    span{
+                        margin-top:5px;
+                        font-size:15px;
+                        font-weight:500;
+                    }
+                }   
+                // form
+                &_form{
+                    // border:1px solid blue;
+                    height:40%;
+                    display:flex;
+                    flex-direction: column;
+                    text-align: start;
+                    width:300px;
+                    color:#0d0d0d;
+                    position:relative;
+                    gap:25px;
+                    .top--box{
+                        position:relative;
+                        .email{
+                            color:#999;
+                            position: absolute;
+                            top: 50%;
+                            transform:translateY(-50%);
+                            left:21px;
+                            pointer-events: none;
+                            transition: 0.25s ease;
+                        }
+                        .email-input{
+                            // border:2px solid #0d0d0d;
+                            height:50px;
+                            width:100%;
+                            font-size:15px;
+                            padding:20px;
+                            color:#0d0d0d;
+                            // transition: 2s ease-in-out;
+                        }
+                        .email-input:focus{
+                            outline-color:#6a5af9;
+                        }
+                        .email-input:not(:placeholder-shown) + .email,
+                        .email-input:focus + .email{
+                            top:0;
+                            padding:10px 10px 0 10px;
+                            display:inline-block;
+                            background-color: #FFFFFF;
+                            color:#6a5af9;
+                        }
+                    }
+
+                    .bottom--box{
+                        position:relative;
+                        .password{
+                            color:#999;
+                            position: absolute;
+                            top: 50%;
+                            transform:translateY(-50%);
+                            left:21px;
+                            pointer-events: none;
+                            transition: 0.25s ease;
+
+                        }
+                        .psw-input{
+                            height:50px;
+                            width:100%;
+                            font-size:15px;
+                            padding:20px;
+                            color:#0d0d0d;
+                        }
+                        .psw-input:focus{
+                            outline-color:#6a5af9;
+                        }
+                        .psw-input:not(:placeholder-shown) + .password,
+                        .psw-input:focus + .password{
+                            top:0;
+                            padding:10px;
+                            display:inline-block;
+                            background-color: #FFFFFF;
+                            color:#6a5af9;
+
+
+                        }
+                    }
+                    .remember{
+                        // margin-top:20px;
+                        font-size:14px;
+                        display:flex;
+                        gap:10px;
+                        input{
+                            outline:0,5px solid #0d0d0d;
+                        }
+                    }
+                }
+
+                // button
+                &_btn{
+                    // border:1px solid red;
+                    width:300px;
+                    height:35%;
+                    display:flex;
+                    flex-direction: column;
+                    justify-content:center;
+                    align-items:center;
+                    gap:15px;
+                    font-family: 'Montserrat', sans-serif;
+                    text-align:center;
+                    .sg-up-btn{
+                        border:1px solid #0D0D0D;
+                        width:80%;
+                        font-size:0.9375rem;
+                        font-weight:600;
+                        padding:7px;
+                        text-decoration:none;
+                        color:#0d0d0d;
+                    }
+                    .sg-up-btn:hover{
+                        background-color:#6a5af9;
+                        color:#0D0D0D;
+                        // border:none;
+                    }
+                    .lg-in-btn{
+                        padding:7px;
+                        width:80%;
+                        background-color:#0D0D0D;
+                        color:#ffffff;
+                        border:1px solid #0D0D0D;
+                        text-decoration:none;
+                    }
+                    .sg-up--social{
+                        border:1px solid #0d0d0d;
+                        width:80%;
+                        font-size:0.9375rem;
+                        font-weight:600;
+                        padding:7px;
+                        .social_icon{
+                            font-size:16px;
+                        }
+
+                    }
+                    .sg-up--social:hover{
+                        background-color:#6a5af9;
+                    }
+                }
+            }
+        }
+
+        // sign up section
+        .signUp--box{
+            background-color:#FFFFFF;
+            width:100%;
+            height:100%;
+            @include centerDisplay;
+
+            .box{
+                width:80%;
+                height:90%;
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+                gap:30px;
+                align-items:center;
+
+                &_title{
+                    // border:1px solid black;
+                    width:100%;
+                    height:150px;
+                    @include centerDisplay;
+                    flex-direction: column;
+                    h1{ 
+                        font-size:40px;
+                        color:#2E8A99;
+                        color:#0D0D0D;
+                        font-family: 'Montserrat', sans-serif;
+    
+                    }
+                    span{
+                        margin-top:5px;
+                        font-size:15px;
+                        font-weight:500;
+                    }
+                }  
+                &_form{
+                    // bordeR:1px solid red;
+                    height:40%;
+                    display:flex;
+                    flex-direction: column;
+                    text-align: start;
+                    justify-content:space-around;
+                    // gap:20px;
+                    width:300px;
+                    color:#0d0d0d;
+                    .top--box{
+                        position:relative;
+                        .email{
+                            color:#999;
+                            position: absolute;
+                            top: 50%;
+                            transform:translateY(-50%);
+                            left:21px;
+                            pointer-events: none;
+                            transition: 0.25s ease;
+                        }
+                        .email-input{
+                            // border:2px solid #0d0d0d;
+                            height:50px;
+                            width:100%;
+                            font-size:15px;
+                            padding:20px;
+                            color:#0d0d0d;
+                            transition: 0.25s ease;
+                        }
+                        .email-input:focus{
+                            outline-color:#6a5af9;
+                        }
+                        .email-input:not(:placeholder-shown) + .email,
+                        .email-input:focus + .email{
+                            top:0;
+                            padding:10px 10px 0 10px;
+                            display:inline-block;
+                            background-color: #FFFFFF;
+                            color:#6a5af9;
+                        }
+                    }
+
+                    .bottom--box{
+                        position:relative;
+                        .password{
+                            color:#999;
+                            position: absolute;
+                            top: 50%;
+                            transform:translateY(-50%);
+                            left:21px;
+                            pointer-events: none;
+                            transition: 0.25s ease;
+                        }
+                        .psw-input{
+                            height:50px;
+                            width:100%;
+                            font-size:15px;
+                            padding:20px;
+                            color:#0d0d0d;
+                        }
+                        .psw-input:focus{
+                            outline-color:#6a5af9;
+                        }
+                        .psw-input:not(:placeholder-shown) + .password,
+                        .psw-input:focus + .password{
+                            top:0;
+                            padding:10px;
+                            display:inline-block;
+                            background-color: #FFFFFF;
+                            color:#6a5af9;
+
+
+                        }
+                    }
+                }
+                &_btn{
+                    width:300px;
+                    height:100px;
+                    display:flex;
+                    flex-direction: column;
+                    justify-content:center;
+                    align-items:center;
+                    gap:15px;
+                    font-family: 'Montserrat', sans-serif;
+                    text-align:center;
+                    
+                    .sg-up-btn{
+                        width:80%;
+                        font-size:0.9375rem;
+                        font-weight:600;
+                        padding:7px;
+                        text-decoration:none;
+                        color:#0d0d0d;
+                        border:1px solid #0D0D0D;
+                    }
+                    .sg-up-btn:hover{
+                        background-color:#6a5af9;
+                        color:#0D0D0D;
+                    }
+                    
+                    span{
+                            height:50px;
+                            font-size:14px;
+                            font-family: 'Montserrat', sans-serif;
+                            .lg-in{
+                                color:green;
+                                text-decoration:none;
+                                font-size:1rem;
+                                font-weight:600;
+                            }
+                        }
+                }
+            }
+        }
+    }
+} 
+}

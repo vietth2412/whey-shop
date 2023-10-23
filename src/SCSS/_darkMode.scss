@@ -1,0 +1,22 @@
+.dark_mode{
+    width:200px;
+    height:100px;
+    border:2px solid red;
+    @include centerDisplay;
+    position:Relative;
+
+    input[type="checkbox"]{
+        padding:10px;
+        // background-color:red;
+        // width:300px;
+        position:absolute;
+        border:1px solid blue;
+    }
+    // #darkMode-toggle{
+    //     width:200px;
+    // }
+    .dark_mode_label{
+        position:relative;
+        // width:100px;
+    }
+}

@@ -1,0 +1,206 @@
+@media screen and (max-width: 1920px) {
+    .body{
+        max-width:100vw;
+        display:flex;
+        justify-content:center;
+        gap:40px;
+        flex-direction: column;
+        align-items: center;
+        padding:20px 0;
+        .tabs{
+            // width:auto;
+            margin:30px;
+            display:flex;
+            justify-content:space-around;
+            gap:20px;
+            .tab{
+                color:#333333;
+                text-align:Center;
+                font-family: 'Roboto', sans-serif;
+                width:200px;
+                padding:5px;
+                // background-color:pink;
+                font-size:19px;
+                font-weight:500;
+                font-family: 'Roboto Condensed', sans-serif;
+                border-radius:4px;
+                border:1px solid #555555;                
+            }
+            .tab:hover{
+                background-color: #6a5af9;
+                transition:ease-in-out 0.3s;
+                color:#333333;
+                border:none;
+            }
+        
+        }
+        .content{
+            // border:2px solid blue;
+            // width:80%;
+            @include centerDisplay;
+            position:relative;
+            .all-product{
+                position:relative;
+                z-index: 100;
+                // width:auto;
+                // border:1px solid red;
+                display:grid;
+                grid-template-columns: repeat(auto-fill, minmax(auto, 1fr));
+                // grid-template-columns:repeat(4, 20%);
+                grid-template-columns: auto auto auto auto;
+                justify-content: center;
+                grid-gap:40px;
+            }
+            
+        }
+        .banner{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:300px;
+            width:100%;
+            
+            .introduce{
+              // background-image:url("https://images.unsplash.com/photo-1621057621391-7ed446a24b41?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTJ8fHByb3QlQzMlQTlpbmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60");
+              background-image:url("https://images.unsplash.com/photo-1611073061590-ee32fe3768b5?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDN8fHdoZXklMjBzdXBwbGVtZW50fGVufDB8fDB8fHww");
+              background-size: cover;
+              background-repeat:no-repeat;
+              background-position:center center;
+              border:1px solid red;
+              height:300px;
+              position:relative;
+              border:1px solid #0D0D0D;
+              width:80%;
+              display:flex;
+              justify-content:space-between;
+              align-items:center;
+              border-radius:10px;
+              text-align:left;
+              border:none;
+              .title{
+                @include centerDisplay;
+                flex-direction: column;
+                gap:40px;
+                width:100%;
+                height:250px;
+                font-family: 'Roboto Condensed', sans-serif;
+                .banner--content{
+                  width:80%;
+                  h2{
+                    font-weight:500;
+                    font-size:40px;
+                    color:#F9f9f9;
+                    color:#EEEEEE;
+                    color:#0D0D0D;
+                    font-family: 'Montserrat', sans-serif;
+                  }
+                  span{
+                    font-size:15px;
+                    font-family: 'Montserrat', sans-serif;
+                  }
+                }
+        
+                .buy-now{
+                  width:80%;
+                  // height:100px;
+                  display:flex;
+                  justify-content:start;
+                  gap:10px;
+                  .access-btn:last-child{
+                    text-decoration:none;
+                    color:#FFFFFF;
+                    background-color:#0D0D0D;
+                    font-size:14px;
+                    font-weight:600;
+                    padding:8px 10px;
+                    // border-radius:5px;
+                  }
+                  .access-btn:first-child{
+                    color:#0D0D0D;
+                    background-color:#FFFFFF;
+                    font-size:14px;
+                    text-decoration:none;
+                    padding:8px 10px;
+                    font-weight:600;
+                  }
+                }
+                
+              }
+            }
+          }
+        
+    }
+}
+
+//* chiều dài tối đa của khung hình là 1280px, nhiều nhất là 1280px, ko thể hơn được nữa, hơn là css ko hoạt động
+@media only screen and (max-width: 1024px) {
+  .body{
+    .tabs{
+        width:auto;
+        // margin:30px;
+        display:grid;
+        grid-template-columns: repeat(2, auto);
+        justify-self: center;
+        // grid-gap:30px;
+        align-self: center;
+        text-align: center;
+
+    }
+
+    .content{
+        // border:2px solid red;
+        @include centerDisplay;
+        position:Relative;
+        width:80%;
+        .all-product{
+            // border:1px solid black;
+            display:grid;
+            grid-template-columns: repeat(3, auto);
+            justify-content:center;
+            grid-gap:40px;
+        }
+    }
+  }
+}
+
+//* tablet viewport
+@media screen and (max-width:768px) {
+    .body{
+        gap:20px;
+        .tabs{
+            .tab{
+                background-color: #F3F3F3;
+                font-size:17px;
+                width:180px;
+            }
+        }
+        .content{
+            .all-product{
+                position:relative;
+                display:grid;
+                grid-template-columns: repeat(2, auto);
+            }
+        }
+    }
+}
+
+//* phone viewport
+@media only screen and (max-width:425px) {
+    .body{
+        margin:40px auto;
+        .tabs{
+            display:flex;
+            flex-direction: column;
+        }
+        .content{
+            .all-product{
+                display:grid;
+                // flex-direction: column;
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+}
+
+
+
