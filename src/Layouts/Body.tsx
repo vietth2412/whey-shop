@@ -37,9 +37,9 @@ import syrup1 from "../Image/syrup-low-cal.jpg";
 import syrup2 from "../Image/sauce-low-cal-428ml.jpg";
 
 import Product from "./product";
-import axios from "axios";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { getHomePageApi } from "../API";
 import "./../App.css";
@@ -101,6 +101,9 @@ const Body = ({ title }: any) => {
               {x.name}
             </div>
           ))}
+        </div>
+        <div className="menu-mobile">
+            <FontAwesomeIcon icon={faBars} className="menu-icon" style={{color: "#0d0d0d",}} />
         </div>
         <div className="content">
           <div className="all-product">

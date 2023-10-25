@@ -53,3 +53,18 @@
         }
     }
 }
+
+@media only screen and (max-width:425px)  {
+    .footer{
+        height:auto;
+        width:100%;
+        .footer-wrapper{
+            display:grid;
+            grid-template-columns: auto auto;
+            grid-row-gap:20px;
+        }
+        .footer-copy{
+            text-align:center;
+        }
+    }
+}

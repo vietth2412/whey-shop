@@ -64,7 +64,7 @@ const Cart = () => {
                     <th className="product-name"> Product </th>
                     <th className="product-price"> Price </th>
                     <th className="product-quantity"> Quantity </th>
-                    <th className="product-suptotal"> Total </th>
+                    <th className="product-suptotal"> Type </th>
                     <th className="product-remove"> &nbsp;</th>
                   </tr>
                 </thead>
@@ -103,7 +103,7 @@ const Cart = () => {
                           </div>
                         </div>
                       </td>
-                      <td> product total </td>
+                      <td> {x.product.category.name} </td>
                       <td>
                         <span className="remove" onClick={remove(x.product)}>
                           X

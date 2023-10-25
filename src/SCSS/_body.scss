@@ -3,12 +3,12 @@
         max-width:100vw;
         display:flex;
         justify-content:center;
-        gap:40px;
+        gap:20px;
         flex-direction: column;
         align-items: center;
-        padding:20px 0;
+        // padding:20px 0;
         .tabs{
-            // width:auto;
+          // border:1px solid red;
             margin:30px;
             display:flex;
             justify-content:space-around;
@@ -24,15 +24,21 @@
                 font-weight:500;
                 font-family: 'Roboto Condensed', sans-serif;
                 border-radius:4px;
-                border:1px solid #555555;                
+                border:1px solid #696969;                
+            }
+            .active-tab{
+              background-color:#6A5AF9!important;
             }
             .tab:hover{
-                background-color: #6a5af9;
+                background-color: #dcdcdc;
                 transition:ease-in-out 0.3s;
                 color:#333333;
                 border:none;
             }
         
+        }
+        .menu-mobile{
+          display:none;
         }
         .content{
             // border:2px solid blue;
@@ -45,11 +51,13 @@
                 // width:auto;
                 // border:1px solid red;
                 display:grid;
-                grid-template-columns: repeat(auto-fill, minmax(auto, 1fr));
+                // grid-template-columns: repeat(auto-fill, minmax(auto, 1fr));
                 // grid-template-columns:repeat(4, 20%);
                 grid-template-columns: auto auto auto auto;
-                justify-content: center;
-                grid-gap:40px;
+                // justify-content: center;
+                grid-column-gap: 60px;
+                // grid-row-gap:40px;
+                // grid-gap:40px;
             }
             
         }
@@ -62,7 +70,7 @@
             
             .introduce{
               // background-image:url("https://images.unsplash.com/photo-1621057621391-7ed446a24b41?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTJ8fHByb3QlQzMlQTlpbmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60");
-              background-image:url("https://images.unsplash.com/photo-1611073061590-ee32fe3768b5?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDN8fHdoZXklMjBzdXBwbGVtZW50fGVufDB8fDB8fHww");
+              background-image:url("https://plus.unsplash.com/premium_photo-1690291494818-068ed0f63c42?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
               background-size: cover;
               background-repeat:no-repeat;
               background-position:center center;
@@ -132,7 +140,6 @@
     }
 }
 
-//* chiều dài tối đa của khung hình là 1280px, nhiều nhất là 1280px, ko thể hơn được nữa, hơn là css ko hoạt động
 @media only screen and (max-width: 1024px) {
   .body{
     .tabs{
@@ -145,6 +152,9 @@
         align-self: center;
         text-align: center;
 
+    }
+    .menu-mobile{
+      display:none;
     }
 
     .content{
@@ -174,6 +184,9 @@
                 width:180px;
             }
         }
+        .menu-mobile{
+          display:none;
+        }
         .content{
             .all-product{
                 position:relative;
@@ -185,19 +198,66 @@
 }
 
 //* phone viewport
-@media only screen and (max-width:425px) {
+@media only screen and (max-width:576px) {
     .body{
-        margin:40px auto;
-        .tabs{
-            display:flex;
-            flex-direction: column;
-        }
+        // margin:40px auto;
+        gap:0;
+        display:flex;
         .content{
             .all-product{
                 display:grid;
                 // flex-direction: column;
                 grid-template-columns: 1fr;
             }
+        }
+        .banner{
+          height:300px;
+          // background-color:brown;
+          background-image:url("https://plus.unsplash.com/premium_photo-1690291494818-068ed0f63c42?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+              background-size: cover;
+              background-repeat:no-repeat;
+              background-position:center center;
+          .introduce{
+            // display:none;
+            width:100%;
+            .title{
+              .banner--content{
+                h2{
+                  font-size:30px;
+                }
+              }
+              .buy-now{
+                .access-btn:first-child{
+                  display:none;
+                }
+              }
+            }
+          }
+        }
+        .tabs{
+          display:none;
+        }
+        .menu-mobile{
+          display:block;
+          width:100%;
+          height:100px;
+          @include centerDisplay;
+
+          .menu-icon{
+            width:25px;
+            height:25px;
+          }
+        }
+        .content{
+          width:100%;
+          padding:0 0 40px 0;
+          .all-product{
+            gap:0;
+            display:grid;
+            grid-template-columns: auto auto;
+            // grid-row-gap:10px;
+            grid-column-gap:20px;
+          }
         }
     }
 }

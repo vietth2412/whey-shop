@@ -1,3 +1,17 @@
+@media only screen and (max-width:2560px) {
+  .header{
+    .header_menu{
+      .menu-content{
+        &_right{
+          .cart{
+            height:auto;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media only screen and (max-width:1920px) {
   .header{
     position:-webkit-sticky;
@@ -10,7 +24,7 @@
       displaY:flex;
       justify-content:center;
       align-items:center;
-      height:100px;
+      height:80px;
       
       .menu-content{
         displaY:flex;
@@ -101,7 +115,7 @@
         }
         &_right{
           display:flex;
-          justify-content:space-between;
+          height:auto;
           width:25%;
           padding:10px;
           align-items:center;
@@ -211,9 +225,24 @@
 }
 
 @media only screen and (max-width:425px) {
-  .User-Page{
-    .header_menu{
-      display:none;
+  .header{
+      .header_menu{
+      // display:none;
+      .menu-content{
+        width:100%;
+        // background-color:blue;
+        &_left{
+          .logo{
+            .logo-img{
+              width:100px;
+              height:40px;
+            }
+          }
+          .sub-menu{
+            display:none;
+          }
+        }
+      }
     }
     .banner{
       .introduce{
