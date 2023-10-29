@@ -1,16 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faCartShopping} from '@fortawesome/free-solid-svg-icons';
-
+import {faBars} from '@fortawesome/free-solid-svg-icons';
 
 
 const Header = ({logo, title}:any) => {
 
   // Lắng nghe sự kiện scroll
+  const [isVisible, setIsVisible] = useState(false);
 
+  const toggle = () => {
+      setIsVisible(!isVisible);
+  };
 
+  // const sidebar:HTMLElement = document.getElementsByClassName('hamburger');
+  // const isClick = false;
+
+  // sidebar.addEventListener("click", () => {
+  //   if (isClick) {
+  //     sidebar.style.width = '0';
+  //     isClick = false; 
+  //   } else {
+  //     sidebar.style.width = '300px';
+  //   }
+  // })
 
     return(
 
@@ -40,38 +55,37 @@ const Header = ({logo, title}:any) => {
                     </div>
                   </div>
                   <div className="menu-content_right">
-                    <div className="user">
+                    <div className="hamburger" onClick={toggle}>
+                      <FontAwesomeIcon icon={faBars} style={{color: "#0D0D0D",}} className="menu-icon"/>
                     </div>
-                  <div className="cart">
+                      <div className="cart">
             
                       <Link className="cart-btn" to="/cart">
                       <FontAwesomeIcon icon={faCartShopping} className="icon-cart"/>
                       Cart
                       </Link>
-                  </div>
+                    </div>
                   </div>
                 </div>
             </div>
+            {isVisible && (
+            <div className="header_sidebar">
+              <div className="menu">
+                <div className="introduce">
+                    <Link to="/" className="link">
+                      Introduce
+                    </Link>
+                </div>
+                <div className="cart">
+                  <Link className="cart-btn" to="/cart">
+                  <FontAwesomeIcon icon={faCartShopping} className="icon-cart"/>
+                  Cart
+                  </Link>
+                </div>
+              </div>
 
-            {/* // section header type banner */}
-            {/* <div className="header_banner">
-             <div className="introduce"> 
-                 <div className="title">
-                   <div className="content">
-                     <h2>
-                     {title} 
-                     </h2>
-                     <span>
-                       Complete a register to own your account here.
-                     </span>
-                   </div>
-                   <div className="buy-now">
-                     <a href="#body" className="access-btn"> Explore More <FontAwesomeIcon icon={faArrowDown} /> </a>
-                     <a href="/LogInPage" className="access-btn"> Get Started <FontAwesomeIcon icon={faArrowRight} /> </a>
-                   </div>
-                 </div>
-             </div>
-           </div> */}
+            </div>
+            )}
         </div>
     )
 };

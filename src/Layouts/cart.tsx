@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
 import Header from "./Header";
 import {
   Elements,
@@ -12,9 +13,17 @@ import {
   getCart,
   removeCartItem,
 } from "../services/cart.service";
+
+import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faTrash} from '@fortawesome/free-solid-svg-icons';
+
+
 import { Modal } from "antd";
 import PaymentModal from "../components/PaymentModal";
 import { loadStripe } from "@stripe/stripe-js";
+
+
+
 const stripeConfig = loadStripe(
   "pk_test_51O3xeCFxF3cTdtWE8aDGfIgeV537wdoJxoyTZ1pRWravkyMg1ig9zB3W3BALCvYoFyq6nNB1BZn9XlL6jpsKWQiT00dtqLi4EJ"
 );
@@ -106,7 +115,7 @@ const Cart = () => {
                       <td> {x.product.category.name} </td>
                       <td>
                         <span className="remove" onClick={remove(x.product)}>
-                          X
+                            <FontAwesomeIcon icon={faTrash} style={{color: "#6a5af9",}} />
                         </span>
                       </td>
                     </tr>
@@ -122,16 +131,16 @@ const Cart = () => {
                 <table className="payment-table">
                   <tbody>
                     <tr>
-                      <th> Sub Total </th>
+                      <th> Total Price </th>
                       <td>
                         {" "}
-                        <span> {totalAmount.toLocaleString("de-DE")} </span>
+                        <span> {totalAmount.toLocaleString("de-DE")}đ </span>
                       </td>
                     </tr>
                   </tbody>
                 </table>
               </form>
-              <button onClick={() => sethowModalPayment(true)}>Payment</button>
+              <button onClick={() => sethowModalPayment(true)}> Thanh Toán </button>
               <Elements stripe={stripeConfig}>
                 <PaymentModal
                   open={showModalPayment}
@@ -139,6 +148,11 @@ const Cart = () => {
                   totalAmount={totalAmount}
                 />
               </Elements>
+            </div>
+            <div className="return">
+              <Link to="/" className="rtn">
+                  Buy More
+              </Link>
             </div>
           </div>
         </div>

@@ -124,7 +124,7 @@ const PaymentModal = ({ open, onClose, totalAmount }: any) => {
       <Spin spinning={loading}>
         <Steps current={currentStep} style={{ marginBottom: 20 }}>
           <Step title="Đăng nhập" />
-          <Step title="địa chỉ" />
+          <Step title="Địa chỉ" />
           <Step title="Thông tin thẻ" />
         </Steps>
 
@@ -156,7 +156,7 @@ const PaymentModal = ({ open, onClose, totalAmount }: any) => {
               disabled={!userInfo}
               onClick={handleNext}
             >
-              Tiếp
+              Tiếp Tục
             </Button>
           </div>
         )}
